@@ -1,23 +1,19 @@
-# Bản cập nhật nhạc dịu dàng + hiệu ứng mượt
+# 20/10 Magic Effects Update
 
-Gói này chỉ chứa hai tệp cần cập nhật trong repository GitHub đang dùng:
+Bản cập nhật thêm hiệu ứng cho website đang dùng trên Render:
+- Dải sáng aurora nhẹ chuyển động phía sau nội dung.
+- Hai bướm phát sáng và các cánh hoa trôi chậm.
+- Sao băng ngẫu nhiên, giới hạn một sao băng tại một thời điểm.
+- Tia lấp lánh nhỏ khi chạm nút quan trọng.
+- Thẻ lời chúc phát sáng khi hiện nội dung và hiệu ứng hover cho thẻ lời nhắn.
+- Không thay đổi API Python, tên route, hoặc chức năng lưu dữ liệu.
+- Giữ nguyên nhạc piano/chuông nhẹ ở `static/20_10_magic_theme.mp3`.
 
-- `templates/index.html`
-- `static/20_10_magic_theme.mp3`
+## Cập nhật GitHub
+1. Giải nén ZIP.
+2. Trong repository GitHub, mở `templates`, tải lên `index.html` mới và xác nhận thay thế/commit.
+3. Mở `static`, tải lên `20_10_magic_theme.mp3` mới và commit nếu muốn chắc chắn giữ đúng nhạc.
+4. Đợi Render triển khai lại đến trạng thái Live.
+5. Trên điện thoại, đóng tab cũ và mở lại; nếu vẫn cũ, thử tải lại trang.
 
-## Cách cập nhật trên GitHub
-
-1. Mở repository đang kết nối với Render.
-2. Mở thư mục `templates`, chọn `Add file` → `Upload files`, tải `index.html` từ thư mục `templates` trong gói này lên, rồi `Commit changes`.
-3. Mở thư mục `static`, chọn `Add file` → `Upload files`, tải `20_10_magic_theme.mp3` từ thư mục `static` trong gói này lên, rồi `Commit changes`.
-4. Chờ Render tự deploy (hoặc vào Manual Deploy → Deploy latest commit).
-5. Mở website và tải mới mạnh bằng Ctrl+F5 trên máy tính. Trên điện thoại, đóng tab rồi mở lại hoặc làm mới trang.
-
-## Những thay đổi
-
-- Thay bản nhạc nền cũ bằng một giai điệu instrumental tự tổng hợp, vui dịu, tông trưởng, có tiếng piano/chuông nhẹ; nhạc bắt đầu khi chạm mở cổng để tương thích chính sách âm thanh trên điện thoại.
-- Giảm hạt nền, giới hạn vòng lặp vẽ khoảng 40 fps và giảm các hiệu ứng shadow/filter nặng.
-- Chuyển cảnh cổng -> khu vườn khoảng 2.5–3.5 giây thay vì chờ lâu; vẫn giữ vòng sáng, hạt lấp lánh và cánh hoa.
-- Đổi hiệu ứng Morph khi hiện thiệp sang fade/scale mượt nhẹ hơn để tránh khựng trên điện thoại.
-
-Nếu Render dùng cache cũ cho âm thanh, mở trực tiếp `/static/20_10_magic_theme.mp3` ở website để kiểm tra tệp đã được cập nhật và làm mới trang.
+Hiệu ứng mới được giới hạn để tránh tạo quá nhiều phần tử cùng lúc. Bạn có thể tắt hiệu ứng bằng nút cây đũa trên website nếu thiết bị yếu.

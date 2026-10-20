@@ -333,6 +333,56 @@ footer{text-align:center; padding:30px 20px calc(50px + env(safe-area-inset-bott
   #portalWave.run,#portalWave.run::before,#portalWave.run::after{animation-duration:.8s !important;}
 }
 
+
+
+/* ================= EXTRA MAGIC EFFECTS — 20/10 DELUXE =================
+   Extra decoration is transform/opacity-based and limited in count to stay smooth. */
+#ambientMagic{
+  position:fixed;inset:0;z-index:2;overflow:hidden;pointer-events:none;contain:layout style paint;
+}
+.ambient-aura{position:absolute;width:clamp(220px,36vw,470px);aspect-ratio:1;border-radius:50%;opacity:.10;will-change:transform;}
+.ambient-aura.aura-rose{left:-16vw;top:18vh;background:radial-gradient(circle,rgba(255,143,196,.95) 0,rgba(255,143,196,.18) 38%,transparent 72%);animation:ambientAuraA 24s ease-in-out infinite alternate;}
+.ambient-aura.aura-lilac{right:-17vw;top:38vh;background:radial-gradient(circle,rgba(183,156,255,.95) 0,rgba(183,156,255,.18) 42%,transparent 74%);animation:ambientAuraB 29s ease-in-out infinite alternate;}
+.ambient-aura.aura-gold{left:27vw;bottom:-35vh;width:clamp(250px,42vw,550px);background:radial-gradient(circle,rgba(246,205,124,.72) 0,rgba(246,205,124,.12) 39%,transparent 72%);animation:ambientAuraC 27s ease-in-out infinite alternate;}
+@keyframes ambientAuraA{to{transform:translate3d(12vw,-6vh,0) scale(1.12)}}
+@keyframes ambientAuraB{to{transform:translate3d(-11vw,7vh,0) scale(.94)}}
+@keyframes ambientAuraC{to{transform:translate3d(7vw,-9vh,0) scale(1.09)}}
+.ambient-butterfly{position:absolute;left:-12vw;top:19vh;font-size:clamp(19px,3vw,31px);opacity:0;color:#ffe6f3;text-shadow:0 0 9px rgba(255,179,217,.7),0 0 22px rgba(183,156,255,.45);will-change:transform,opacity;animation:butterflyJourney 27s ease-in-out infinite;}
+.ambient-butterfly.butterfly-two{top:67vh;animation-delay:-13s;animation-duration:31s;font-size:clamp(16px,2.5vw,25px);}
+@keyframes butterflyJourney{0%{opacity:0;transform:translate3d(0,0,0) rotate(-14deg) scale(.75)}10%{opacity:.42}32%{transform:translate3d(28vw,-7vh,0) rotate(12deg) scale(1)}55%{opacity:.52;transform:translate3d(57vw,5vh,0) rotate(-8deg) scale(.9)}84%{opacity:.36}100%{opacity:0;transform:translate3d(120vw,-4vh,0) rotate(16deg) scale(.78)}}
+.ambient-petal{position:absolute;font-size:clamp(14px,2.5vw,24px);opacity:0;color:#ffd9ec;text-shadow:0 0 10px rgba(255,179,217,.65);will-change:transform,opacity;animation:petalFloatAcross 18s ease-in-out infinite;}
+.ambient-petal.petal-one{left:11%;top:74%;animation-delay:-3s}.ambient-petal.petal-two{left:80%;top:20%;animation-delay:-11s;font-size:17px}.ambient-petal.petal-three{left:58%;top:86%;animation-delay:-7s;font-size:19px}
+@keyframes petalFloatAcross{0%,100%{opacity:0;transform:translate3d(0,0,0) rotate(0) scale(.75)}18%{opacity:.34}50%{opacity:.46;transform:translate3d(5vw,-10vh,0) rotate(90deg) scale(1)}80%{opacity:.24} }
+.magic-meteor{position:absolute;top:var(--meteor-y);left:var(--meteor-x);width:clamp(74px,12vw,145px);height:2px;border-radius:50%;opacity:0;transform:rotate(-28deg);transform-origin:right center;background:linear-gradient(90deg,transparent,rgba(255,248,242,.88) 38%,rgba(255,230,176,.9) 72%,transparent);box-shadow:0 0 8px rgba(255,230,176,.44);animation:meteorGlide 1.35s ease-out forwards;}
+@keyframes meteorGlide{0%{opacity:0;transform:rotate(-28deg) translate3d(0,0,0) scaleX(.42)}15%{opacity:.82}100%{opacity:0;transform:rotate(-28deg) translate3d(-24vw,19vh,0) scaleX(1.1)}}
+/* Elegant moving highlight on the main title and glass cards. */
+.hero h1{position:relative;text-shadow:0 0 22px rgba(255,179,217,.3),0 0 48px rgba(183,156,255,.16);animation:heroTitleBreath 6.5s ease-in-out infinite;}
+@keyframes heroTitleBreath{0%,100%{text-shadow:0 0 18px rgba(255,179,217,.24),0 0 36px rgba(183,156,255,.12)}50%{text-shadow:0 0 28px rgba(255,179,217,.52),0 0 58px rgba(183,156,255,.25)}}
+.entry-card,.message-form{animation:glassAura 8s ease-in-out infinite;}
+@keyframes glassAura{0%,100%{box-shadow:0 20px 52px -28px rgba(106,76,255,.38),0 0 0 1px rgba(255,255,255,.018)}50%{box-shadow:0 22px 56px -26px rgba(106,76,255,.52),0 0 22px rgba(255,179,217,.09)}}
+#nameForm button,#againBtn,.message-form button{transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,filter .35s ease;}
+#nameForm button:hover,#againBtn:hover,.message-form button:hover{transform:translateY(-2px);filter:brightness(1.06);box-shadow:0 9px 24px rgba(255,143,196,.22)}
+.entry-card.wish-reveal::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;background:radial-gradient(circle at 50% 38%,rgba(255,230,176,.22),transparent 58%);animation:wishRevealGlow 1.35s ease-out both;}
+@keyframes wishRevealGlow{0%{opacity:0;transform:scale(.72)}28%{opacity:1}100%{opacity:0;transform:scale(1.18)}}
+.message-note{transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;}
+@media(hover:hover){.message-note:hover{transform:translateY(-4px);border-color:rgba(255,179,217,.38);box-shadow:0 18px 42px -22px rgba(255,143,196,.28)}}
+/* Small tap glints give buttons/flowers a magical response without adding heavy effects. */
+.tap-glint{position:fixed;z-index:90;pointer-events:none;font-size:18px;line-height:1;text-shadow:0 0 8px rgba(255,230,176,.95),0 0 18px rgba(255,179,217,.75);animation:tapGlintRise .82s ease-out forwards;}
+@keyframes tapGlintRise{0%{opacity:0;transform:translate3d(-50%,-35%,0) scale(.4) rotate(-20deg)}20%{opacity:1}100%{opacity:0;transform:translate3d(calc(-50% + var(--gx)),calc(-50% - 42px),0) scale(1.24) rotate(24deg)}}
+@media(max-width:700px){
+  #ambientMagic{opacity:.78}
+  .ambient-aura{opacity:.07}
+  .ambient-butterfly{font-size:18px}
+  .ambient-petal{font-size:14px}
+  .entry-card,.message-form{animation-duration:10s}
+}
+@media(prefers-reduced-motion:reduce){
+  #ambientMagic .ambient-aura,#ambientMagic .ambient-butterfly,#ambientMagic .ambient-petal,.hero h1,.entry-card,.message-form{animation:none!important}
+  .magic-meteor,.tap-glint{display:none!important}
+}
+.reduce-motion #ambientMagic .ambient-aura,.reduce-motion #ambientMagic .ambient-butterfly,.reduce-motion #ambientMagic .ambient-petal,.reduce-motion .hero h1,.reduce-motion .entry-card,.reduce-motion .message-form{animation:none!important}
+.reduce-motion .magic-meteor,.reduce-motion .tap-glint{display:none!important}
+
 </style>
 </head>
 <body>
@@ -532,6 +582,44 @@ if(!reduced){
 /* ---------------- Foreground falling petals for the portal ceremony ---------------- */
 var magicRain = document.getElementById('magicRain');
 var magicRainTimers = [];
+
+/* Extra scene decor: soft aurora, butterflies, drifting blossoms, and one meteor at a time. */
+var ambientMagic = document.createElement('div');
+ambientMagic.id = 'ambientMagic';
+ambientMagic.setAttribute('aria-hidden','true');
+ambientMagic.innerHTML = '<span class="ambient-aura aura-rose"></span><span class="ambient-aura aura-lilac"></span><span class="ambient-aura aura-gold"></span><span class="ambient-butterfly">🦋</span><span class="ambient-butterfly butterfly-two">🦋</span><span class="ambient-petal petal-one">✿</span><span class="ambient-petal petal-two">✧</span><span class="ambient-petal petal-three">🌸</span>';
+document.body.insertBefore(ambientMagic, document.getElementById('musicStatusToast'));
+var meteorTimer = null;
+function scheduleMagicMeteor(){
+  if(document.hidden || reduced){ meteorTimer=setTimeout(scheduleMagicMeteor, 9000); return; }
+  var existing=ambientMagic.querySelectorAll('.magic-meteor');
+  if(existing.length < 1){
+    var meteor=document.createElement('span');
+    meteor.className='magic-meteor';
+    meteor.style.setProperty('--meteor-y', (8+Math.random()*47).toFixed(1)+'vh');
+    meteor.style.setProperty('--meteor-x', (58+Math.random()*42).toFixed(1)+'vw');
+    ambientMagic.appendChild(meteor);
+    setTimeout(function(){ meteor.remove(); }, 1500);
+  }
+  meteorTimer=setTimeout(scheduleMagicMeteor, 6500+Math.random()*5200);
+}
+setTimeout(scheduleMagicMeteor, 3200);
+
+/* Small twinkles on meaningful taps; the list is capped so the phone stays responsive. */
+var tapGlintsActive=0;
+function makeTapGlint(x,y){
+  if(reduced || tapGlintsActive>=5) return;
+  var el=document.createElement('span');
+  el.className='tap-glint'; el.textContent=['✦','✧','✿','♡'][Math.floor(Math.random()*4)];
+  el.style.left=x+'px'; el.style.top=y+'px'; el.style.setProperty('--gx', (Math.random()*34-17).toFixed(0)+'px');
+  document.body.appendChild(el); tapGlintsActive++;
+  setTimeout(function(){el.remove();tapGlintsActive=Math.max(0,tapGlintsActive-1);},900);
+}
+document.addEventListener('pointerdown', function(event){
+  if(!event.isPrimary) return;
+  var target=event.target.closest('#nameForm button,#againBtn,#messageForm button,.flower');
+  if(target) makeTapGlint(event.clientX,event.clientY);
+}, {passive:true});
 function rainMagicPetals(count){
   clearMagicPetals();
   var symbols = ['✧','✦','❀','✿','🌸','❋','♡','✧'];
@@ -633,6 +721,8 @@ function showWish(name){
   document.getElementById('wishName').textContent = name;
   document.getElementById('wishText').textContent = DEFAULT_WISH(name);
   stateForm.hidden = true; stateWish.hidden = false;
+  entryCard.classList.remove('wish-reveal'); void entryCard.offsetWidth; entryCard.classList.add('wish-reveal');
+  setTimeout(function(){ entryCard.classList.remove('wish-reveal'); }, 1450);
 }
 function showForm(){
   stateWish.hidden = true; stateForm.hidden = false;
