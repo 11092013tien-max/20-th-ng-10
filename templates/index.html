@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chúc Mừng Ngày 20 Tháng 10 ✨</title>
+<meta name="description" content="Khu vườn phép thuật chúc mừng Ngày Phụ nữ Việt Nam 20/10">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ====================================================================
+   ĐỂ CHỈNH SỬA: tìm "✏️ CHỈNH Ở ĐÂY" để đổi câu chúc mặc định.
+   ==================================================================== */
+:root{
+  color-scheme: dark;
+  --bg0:#0a0818; --bg1:#150e34; --bg2:#271a52;
+  --pink:#ffb3d9; --pink-soft:#ffd9ec; --pink-deep:#ff8fc4;
+  --purple:#b79cff; --purple-deep:#6a4cff;
+  --gold:#f6cd7c; --gold-soft:#ffe6b0;
+  --pearl:#fff8f2; --pearl-dim:#cdc3e8;
+  --font-display:'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body:'Quicksand', 'Segoe UI', Roboto, sans-serif;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px);}
+*,*::before,*::after{box-sizing:border-box;}
+body{
+  margin:0; min-height:100%;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -5%, var(--bg2), transparent),
+    radial-gradient(ellipse 60% 40% at 85% 30%, rgba(107,76,255,.18), transparent),
+    linear-gradient(180deg, var(--bg0), var(--bg1) 40%, var(--bg0));
+  color:var(--pearl); font-family:var(--font-body); font-size:16px;
+  overflow-x:hidden; position:relative;
+}
+#bgCanvas{position:fixed; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; will-change:transform;}
+h1,h2,h3{font-family:var(--font-display); margin:0; font-weight:600;}
+p{margin:0; line-height:1.7;}
+button{font-family:var(--font-body); cursor:pointer; border:none; background:none; color:inherit;}
+::selection{background:var(--pink-deep); color:var(--bg0);}
+
+.reduce-motion *, .reduce-motion *::before, .reduce-motion *::after{
+  animation-duration:.01ms !important; animation-iteration-count:1 !important;
+  transition-duration:.01ms !important; scroll-behavior:auto !important;
+}
+
+/* Morph transition cho thẻ lời chúc và màn mở cổng */
+::view-transition-old(entry-stage){animation: cardMorphOut 1.65s cubic-bezier(.2,.75,.25,1) both;}
+::view-transition-new(entry-stage){animation: cardMorphIn 2.15s cubic-bezier(.16,1,.3,1) both;}
+::view-transition-group(entry-stage){animation-duration:2.15s;}
+html.portal-view-transition::view-transition-group(root){animation-duration:4.8s;}
+html.portal-view-transition::view-transition-old(root){animation:worldFoldAway 3.25s cubic-bezier(.7,0,.2,1) both;}
+html.portal-view-transition::view-transition-new(root){animation:worldPortalOpen 4.8s cubic-bezier(.16,1,.3,1) both;}
+@keyframes cardMorphOut{to{opacity:0;filter:blur(12px);transform:translateY(-18px) scale(.92) rotateX(8deg)}}
+@keyframes cardMorphIn{from{opacity:0;filter:blur(15px);transform:translateY(32px) scale(.82) rotateX(-12deg)}55%{opacity:1}to{opacity:1;filter:blur(0);transform:none}}
+@keyframes worldFoldAway{to{opacity:0;filter:blur(18px);transform:scale(1.09) rotate(-1.2deg)}}
+@keyframes worldPortalOpen{0%{opacity:.2;clip-path:circle(0% at 50% 44%);filter:blur(12px);transform:scale(.9)}38%{opacity:1;filter:blur(1px)}100%{opacity:1;clip-path:circle(150% at 50% 44%);filter:blur(0);transform:scale(1)}}
+
+/* ================= GATE ================= */
+#gate{
+  position:fixed; inset:0; z-index:50; display:flex; align-items:center; justify-content:center;
+  background:radial-gradient(ellipse at 50% 40%, #190f3d, #06040f 75%);
+  transition:opacity 1.3s cubic-bezier(.16,1,.3,1), filter 1.3s ease, transform 1.3s cubic-bezier(.16,1,.3,1);
+}
+#gate.leaving{opacity:0; filter:blur(18px); pointer-events:none;}
+.gate-inner{text-align:center; max-width:560px; padding:calc(28px + env(safe-area-inset-top,0px)) 28px calc(28px + env(safe-area-inset-bottom,0px)); position:relative;}
+.ring{width:min(62vw,280px); height:min(62vw,280px); margin:0 auto 28px; border-radius:50%; position:relative;}
+.ring::before{
+  content:""; position:absolute; inset:0; border-radius:50%; padding:3px;
+  background:conic-gradient(from 0deg, var(--gold), var(--pink), var(--purple), var(--gold));
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor; mask-composite:exclude;
+  animation:spin 9s linear infinite; filter:drop-shadow(0 0 18px rgba(246,205,124,.55));
+}
+.ring::after{
+  content:"♡"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  font-size:min(16vw,76px); color:var(--pink-soft); text-shadow:0 0 30px var(--pink-deep), 0 0 60px rgba(183,156,255,.6);
+  animation:pulse 3.2s ease-in-out infinite;
+}
+@keyframes spin{to{transform:rotate(360deg);}}
+@keyframes pulse{0%,100%{transform:scale(1); opacity:.92;} 50%{transform:scale(1.07); opacity:1;}}
+.gate-eyebrow{font-style:italic; font-family:var(--font-display); color:var(--pearl-dim); font-size:clamp(1rem,3vw,1.2rem); margin-bottom:10px;}
+.gate-title{font-size:clamp(1.4rem,5vw,2rem); background:linear-gradient(90deg,var(--gold-soft),var(--pink-soft),var(--purple)); -webkit-background-clip:text; background-clip:text; color:transparent; margin-bottom:30px;}
+#enterBtn{
+  font-family:var(--font-display); font-size:clamp(1rem,3vw,1.15rem); letter-spacing:.04em;
+  padding:16px 34px; border-radius:999px; color:var(--bg0); font-weight:700;
+  background:linear-gradient(90deg,var(--gold),var(--pink));
+  box-shadow:0 0 0 1px rgba(255,255,255,.25) inset, 0 10px 34px -8px rgba(255,143,196,.6);
+  animation:glowBtn 2.6s ease-in-out infinite;
+}
+@keyframes glowBtn{0%,100%{box-shadow:0 0 0 1px rgba(255,255,255,.25) inset,0 10px 34px -8px rgba(255,143,196,.55);} 50%{box-shadow:0 0 0 1px rgba(255,255,255,.35) inset,0 10px 46px -4px rgba(255,143,196,.85);}}
+#enterBtn:active{transform:scale(.97);}
+
+/* ================= CINEMATIC 20/10 PORTAL ================= */
+#gate{overflow:hidden;isolation:isolate;background:
+ radial-gradient(ellipse at 50% 44%,rgba(116,66,184,.34),transparent 35%),
+ radial-gradient(ellipse at 50% 110%,rgba(255,143,196,.12),transparent 42%),
+ radial-gradient(ellipse at 50% 40%,#190f3d,#06040f 75%);}
+#gate::before,#gate::after{content:"";position:absolute;inset:-35%;pointer-events:none;z-index:-1;}
+#gate::before{background:conic-gradient(from 0deg at 50% 50%,transparent 0 30%,rgba(255,213,244,.08) 34%,transparent 38% 60%,rgba(246,205,124,.08) 64%,transparent 69%);animation:gateNebula 28s linear infinite;}
+#gate::after{inset:0;background:radial-gradient(ellipse at center,transparent 26%,rgba(0,0,0,.44) 100%);}
+@keyframes gateNebula{to{transform:rotate(360deg) scale(1.08)}}
+.gate-inner{max-width:760px;width:100%;z-index:1;}
+.portal-scene{position:relative;width:min(76vw,370px);aspect-ratio:1;margin:0 auto 14px;display:grid;place-items:center;perspective:900px;}
+.portal-scene::before,.portal-scene::after{content:"";position:absolute;border-radius:50%;pointer-events:none;inset:-2%;z-index:0;}
+.portal-scene::before{background:conic-gradient(from 0deg,transparent 0 12%,rgba(255,230,176,.16) 15%,transparent 19% 33%,rgba(255,179,217,.21) 38%,transparent 43% 66%,rgba(183,156,255,.22) 72%,transparent 78%);filter:blur(8px);opacity:.78;animation:sceneAurora 18s linear infinite;}
+.portal-scene::after{inset:8%;border:1px solid rgba(255,248,242,.15);box-shadow:0 0 28px rgba(255,179,217,.13),inset 0 0 35px rgba(183,156,255,.12);transform:rotateX(70deg) rotateZ(20deg);animation:sceneHalo 7s ease-in-out infinite alternate;}
+@keyframes sceneAurora{to{transform:rotate(360deg) scale(1.08)}}
+@keyframes sceneHalo{from{transform:rotateX(64deg) rotateZ(-12deg) scale(.96);opacity:.35}to{transform:rotateX(76deg) rotateZ(22deg) scale(1.08);opacity:.95}}
+#gate.charging .portal-scene::before{animation-duration:2.8s;opacity:1;filter:blur(3px) brightness(1.65)}
+#gate.charging .portal-scene::after{animation-duration:1.9s;opacity:1;border-color:rgba(255,230,176,.8);box-shadow:0 0 52px rgba(255,179,217,.42),inset 0 0 40px rgba(183,156,255,.28)}
+.ring{width:min(58vw,255px);height:min(58vw,255px);margin:0;z-index:2;transform-style:preserve-3d;}
+.ring::before{padding:4px;filter:drop-shadow(0 0 20px rgba(246,205,124,.6)) drop-shadow(0 0 50px rgba(183,156,255,.34));}
+.ring::after{content:"✿";font-size:min(20vw,90px);color:#fff0fa;text-shadow:0 0 15px #ff8fc4,0 0 42px #b79cff,0 0 86px rgba(255,179,217,.8);}
+.orbit{position:absolute;border-radius:50%;pointer-events:none;}
+.orbit-a{inset:3%;border:1px solid rgba(255,230,176,.5);box-shadow:0 0 24px rgba(246,205,124,.13),inset 0 0 22px rgba(183,156,255,.08);transform:rotateX(69deg) rotateZ(-18deg);animation:orbitFloat 9s ease-in-out infinite alternate;}
+.orbit-b{inset:9%;border:1px dashed rgba(255,179,217,.55);transform:rotateY(63deg) rotateZ(24deg);animation:orbitSpin 22s linear infinite reverse;}
+.orbit-c{inset:15%;border:1px solid rgba(183,156,255,.4);transform:rotateX(68deg) rotateY(22deg);animation:orbitSpin 16s linear infinite;}
+.orbit-d{inset:-4%;border:1px solid rgba(255,179,217,.22);transform:rotateX(76deg) rotateZ(36deg);animation:orbitSpin 31s linear infinite;}
+.orbit-e{inset:21%;border:1px dotted rgba(255,230,176,.52);transform:rotateY(71deg) rotateZ(-40deg);animation:orbitSpin 13s linear infinite reverse;}
+.portal-star{position:absolute;width:8px;height:8px;border-radius:50%;background:#fff4ce;box-shadow:0 0 9px 3px rgba(255,230,176,.75),0 0 24px 8px rgba(255,143,196,.27);}
+.portal-star.one{top:12%;left:24%;animation:starDrift 4s ease-in-out infinite;}
+.portal-star.two{right:16%;top:29%;width:5px;height:5px;animation:starDrift 3.1s ease-in-out infinite reverse;}
+.portal-star.three{bottom:16%;left:25%;width:6px;height:6px;animation:starDrift 4.8s ease-in-out infinite;}
+.portal-star.four{top:47%;right:7%;width:4px;height:4px;animation:starDrift 3.7s .4s ease-in-out infinite;}
+.portal-star.five{bottom:7%;right:31%;width:7px;height:7px;animation:starDrift 5.2s .9s ease-in-out infinite reverse;}
+@keyframes orbitFloat{to{transform:rotateX(76deg) rotateZ(10deg) scale(1.04)}}
+@keyframes orbitSpin{to{rotate:360deg}}
+@keyframes starDrift{0%,100%{transform:translate3d(0,0,0) scale(.8);opacity:.55}50%{transform:translate3d(9px,-14px,0) scale(1.5);opacity:1}}
+.gate-eyebrow{letter-spacing:.16em;text-transform:uppercase;font-style:normal;font-family:var(--font-body);font-size:clamp(.68rem,2.1vw,.88rem);color:#e7d5ff;margin-bottom:16px;text-shadow:0 0 18px rgba(183,156,255,.5);}
+.gate-title{display:flex;flex-direction:column;gap:4px;line-height:1.08;margin:0 auto 17px;font-size:clamp(1.2rem,4.4vw,2rem);}
+.gate-title-top{font-family:var(--font-body);font-weight:600;letter-spacing:.26em;font-size:.76em;color:#fff2fc;text-shadow:0 0 24px rgba(255,179,217,.34);}
+.gate-title-main{display:block;font-size:clamp(2.05rem,8.2vw,4.9rem);font-weight:700;letter-spacing:-.035em;line-height:1.08;background:linear-gradient(100deg,#fff8f2 3%,#ffe6b0 25%,#ffb3d9 52%,#d4c0ff 75%,#fff8f2 96%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(255,143,196,.17));animation:titleShimmer 7s ease-in-out infinite;}
+@keyframes titleShimmer{0%,100%{background-position:0% center;filter:drop-shadow(0 0 18px rgba(255,143,196,.15))}50%{background-position:100% center;filter:drop-shadow(0 0 28px rgba(183,156,255,.38))}}
+.gate-note{max-width:38ch;margin:0 auto 24px;color:var(--pearl-dim);font-size:clamp(.9rem,2.7vw,1.06rem);line-height:1.8;text-wrap:balance;}
+#enterBtn{position:relative;overflow:hidden;isolation:isolate;padding:16px 27px;letter-spacing:.035em;transition:transform .45s ease,filter .7s ease,box-shadow .7s ease;}
+#enterBtn::before{content:"";position:absolute;inset:-60% auto -60% -45%;width:34%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.78),transparent);transform:rotate(22deg);animation:buttonShine 3.4s ease-in-out infinite;z-index:-1;}
+@keyframes buttonShine{0%,25%{left:-45%}68%,100%{left:135%}}
+.gate-footnote{font-size:.76rem;color:rgba(205,195,232,.68);letter-spacing:.03em;margin-top:17px;}
+.gate-visitor-board{max-width:520px;margin:22px auto 0;padding:13px 16px 12px;border-radius:18px;background:linear-gradient(135deg,rgba(255,255,255,.055),rgba(183,156,255,.07));border:1px solid rgba(255,230,246,.13);box-shadow:0 10px 36px rgba(9,4,26,.22),inset 0 0 22px rgba(255,179,217,.035);backdrop-filter:blur(8px);}
+.gate-visitor-heading{font-size:.69rem;letter-spacing:.14em;color:#ffe6b0;text-align:center;margin-bottom:5px;}
+.gate-visitor-count{font-size:.75rem;color:rgba(237,224,255,.72);text-align:center;line-height:1.45;}
+.gate-guest-list{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:7px;margin-top:8px;max-height:94px;overflow-y:auto;padding:2px 4px;overscroll-behavior:contain;}
+.gate-guest-chip{display:inline-flex;align-items:center;gap:5px;border:1px solid rgba(255,179,217,.25);background:rgba(255,179,217,.07);border-radius:999px;padding:5px 10px;color:#ffdfef;font-size:.75rem;max-width:100%;overflow-wrap:anywhere;box-shadow:0 0 14px rgba(255,179,217,.05);animation:chipFloat 5s ease-in-out infinite;}
+.gate-guest-chip:nth-child(2n){animation-delay:-1.8s}.gate-guest-chip:nth-child(3n){animation-delay:-3.1s}
+@keyframes chipFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+#portalWave{position:fixed;inset:0;z-index:80;pointer-events:none;opacity:0;clip-path:circle(0% at 50% 43%);background:radial-gradient(circle at 50% 43%,rgba(255,248,242,.98) 0%,rgba(255,179,217,.78) 9%,rgba(183,156,255,.64) 21%,rgba(31,18,67,.97) 52%,#080514 77%);mix-blend-mode:screen;}
+#portalWave.run{animation:portalSweep 7.8s cubic-bezier(.16,1,.3,1) both;}
+#portalWave::before,#portalWave::after{content:"";position:absolute;left:50%;top:44%;width:min(92vmin,820px);aspect-ratio:1;border-radius:50%;pointer-events:none;opacity:0;transform:translate(-50%,-50%) scale(.2);}
+#portalWave::before{border:2px solid rgba(255,239,203,.92);box-shadow:0 0 18px rgba(255,230,176,.8),inset 0 0 28px rgba(255,179,217,.25);}
+#portalWave::after{border:1px dashed rgba(255,211,246,.8);box-shadow:0 0 42px rgba(183,156,255,.65);}
+#portalWave.run::before{animation:portalHalo 7.35s cubic-bezier(.16,1,.3,1) both;}
+#portalWave.run::after{animation:portalHalo 7.35s .65s cubic-bezier(.16,1,.3,1) both;}
+@keyframes portalSweep{0%{opacity:0;clip-path:circle(0% at 50% 43%);filter:blur(24px)}12%{opacity:1}32%{opacity:.98;clip-path:circle(24% at 50% 43%);filter:blur(5px)}55%{opacity:.93;clip-path:circle(65% at 50% 43%);filter:blur(1px)}82%{opacity:.72;clip-path:circle(135% at 50% 43%);filter:blur(0)}100%{opacity:0;clip-path:circle(165% at 50% 43%);filter:blur(10px)}}
+@keyframes portalHalo{0%{opacity:0;transform:translate(-50%,-50%) scale(.2) rotate(-35deg)}18%{opacity:.95}72%{opacity:.7}100%{opacity:0;transform:translate(-50%,-50%) scale(1.7) rotate(145deg)}}
+
+/* A second foreground layer makes the portal's petals/meteor trails visibly pass over the gate. */
+#magicRain{position:fixed;inset:0;z-index:85;overflow:hidden;pointer-events:none;contain:strict;}
+.magic-petal{position:absolute;top:-12vh;left:var(--x);font-size:var(--size);color:var(--tint);opacity:0;text-shadow:0 0 12px currentColor,0 0 28px rgba(255,179,217,.65);filter:drop-shadow(0 0 7px rgba(183,156,255,.52));animation:magicPetalFall var(--dur) var(--delay) cubic-bezier(.15,.62,.3,1) both;will-change:transform,opacity;}
+@keyframes magicPetalFall{0%{opacity:0;transform:translate3d(0,-5vh,0) rotate(-50deg) scale(.35)}12%{opacity:.96}48%{opacity:1;transform:translate3d(var(--drift),48vh,0) rotate(190deg) scale(1.14)}78%{opacity:.9}100%{opacity:0;transform:translate3d(var(--drift-end),118vh,0) rotate(510deg) scale(.75)}}
+#bgCanvas.burst-on-top{z-index:76;mix-blend-mode:screen;}
+#musicStatusToast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:100;transform:translate(-50%,12px);opacity:0;pointer-events:none;max-width:min(90vw,520px);text-align:center;background:rgba(19,11,42,.9);border:1px solid rgba(255,230,176,.25);box-shadow:0 10px 40px rgba(0,0,0,.4),0 0 24px rgba(255,179,217,.12);backdrop-filter:blur(12px);border-radius:999px;padding:10px 16px;color:#fff3fb;font-size:.82rem;transition:opacity .35s ease,transform .35s ease;}
+#musicStatusToast.show{opacity:1;transform:translate(-50%,0);}
+#controls .ctrl-btn[aria-pressed="true"]{border-color:rgba(255,230,176,.6);box-shadow:0 0 22px rgba(255,179,217,.22),0 6px 18px -6px rgba(0,0,0,.6);}
+#gate.charging .ring{animation:portalCharge 3.35s cubic-bezier(.2,.8,.2,1) both;}
+#gate.charging .ring::before{animation-duration:2.6s;filter:drop-shadow(0 0 28px rgba(246,205,124,.95)) drop-shadow(0 0 70px rgba(255,143,196,.72));}
+#gate.charging .ring::after{animation:portalHeart 3.15s cubic-bezier(.16,1,.3,1) both;}
+#gate.charging .orbit-a{animation-duration:2.8s;border-color:rgba(255,248,242,.95)}
+#gate.charging .orbit-b{animation-duration:3.2s}
+#gate.charging .gate-inner{animation:gateCharge 3.25s cubic-bezier(.16,1,.3,1) both;}
+#gate.opening{opacity:0;filter:blur(34px);transform:scale(1.18) rotate(-2deg);transition:opacity 3.35s cubic-bezier(.16,1,.3,1),filter 3.35s ease,transform 3.65s cubic-bezier(.16,1,.3,1);pointer-events:none;}
+#gate.opening .gate-inner{opacity:0;transform:translateY(-28px) scale(.82) rotateX(12deg);transition:opacity 1.35s ease,transform 1.8s cubic-bezier(.16,1,.3,1);}
+#gate.opening.charging .gate-inner{animation:gateInnerExit 2.55s cubic-bezier(.16,1,.3,1) both;}
+@keyframes portalCharge{0%{transform:scale(1) rotate(0)}20%{transform:scale(1.025) rotate(8deg)}46%{transform:scale(1.09) rotate(24deg)}72%{transform:scale(1.18) rotate(66deg)}100%{transform:scale(1.34) rotate(135deg)}}
+@keyframes portalHeart{0%{transform:scale(1);opacity:1;filter:brightness(1)}25%{transform:scale(1.08);opacity:1;filter:brightness(1.2)}52%{transform:scale(1.28);opacity:1;filter:brightness(1.7)}78%{transform:scale(1.55);opacity:.8;filter:brightness(2.1)}100%{transform:scale(2.05);opacity:0;filter:brightness(2.8)}}
+@keyframes gateCharge{0%{transform:translateY(0) scale(1);filter:brightness(1)}24%{transform:translateY(-2px) scale(1.01);filter:brightness(1.08)}52%{transform:translateY(-6px) scale(1.035);filter:brightness(1.28)}76%{transform:translateY(-10px) scale(1.05);filter:brightness(1.55)}100%{transform:translateY(-16px) scale(.96);filter:brightness(1.9)}}
+@keyframes gateInnerExit{0%{opacity:1;transform:translateY(-8px) scale(1);filter:brightness(1.25)}28%{opacity:1;transform:translateY(-16px) scale(1.06);filter:blur(0) brightness(1.65)}58%{opacity:.88;transform:translateY(-28px) scale(1.12);filter:blur(3px) brightness(2)}100%{opacity:0;transform:translateY(-58px) scale(.65) rotateX(20deg);filter:blur(22px) brightness(2.8)}}
+
+/* ================= MAIN ================= */
+#main{position:relative;z-index:1;opacity:0;transform:translateY(34px) scale(.985);filter:blur(5px);transform-origin:50% 0;transition:opacity 1.8s cubic-bezier(.16,1,.3,1),transform 2s cubic-bezier(.16,1,.3,1),filter 1.65s ease;}
+#main.show{opacity:1;transform:none;filter:blur(0);}
+#main.ceremony-entered .hero .clock-pill{animation:heroObjectIn 1.25s .22s both cubic-bezier(.16,1,.3,1)}
+#main.ceremony-entered .hero h1{animation:heroObjectIn 1.55s .42s both cubic-bezier(.16,1,.3,1)}
+#main.ceremony-entered .hero .sub{animation:heroObjectIn 1.45s .66s both cubic-bezier(.16,1,.3,1)}
+#main.ceremony-entered .hero .tag{animation:heroObjectIn 1.4s .88s both cubic-bezier(.16,1,.3,1)}
+@keyframes heroObjectIn{0%{opacity:0;filter:blur(14px);transform:translateY(42px) scale(.94);letter-spacing:.04em}65%{opacity:1;filter:blur(0)}100%{opacity:1;filter:blur(0);transform:none;letter-spacing:normal}}
+
+.hero{min-height:70vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:60px 24px 20px; position:relative;}
+.clock-pill{font-size:.85rem; color:var(--pearl-dim); background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); padding:7px 16px; border-radius:999px; margin-bottom:34px; backdrop-filter:blur(6px);}
+.hero h1{font-size:clamp(1.6rem,6vw,2.8rem); line-height:1.15; color:var(--pearl); text-shadow:0 0 30px rgba(255,179,217,.35);}
+.hero .sub{font-size:clamp(1.3rem,5vw,2rem); margin-top:10px; font-style:italic; color:var(--gold-soft); text-shadow:0 0 24px rgba(246,205,124,.4);}
+.hero .tag{margin-top:22px; max-width:46ch; color:var(--pearl-dim); font-size:1.02rem;}
+.flowers{position:absolute; inset:0; pointer-events:none; overflow:visible;}
+.flower{position:absolute; font-size:1.8rem; pointer-events:auto; filter:drop-shadow(0 0 10px rgba(255,179,217,.5)); transition:transform .25s ease;}
+.flower:hover{transform:scale(1.15) rotate(-6deg);}
+.flower.bloom{animation:bloom .6s ease;}
+@keyframes bloom{0%{transform:scale(1);} 45%{transform:scale(1.5) rotate(12deg);} 100%{transform:scale(1);}}
+
+.reveal{opacity:0;transform:translateY(46px) scale(.985);filter:blur(4px);transition:opacity 1.35s cubic-bezier(.16,1,.3,1),transform 1.5s cubic-bezier(.16,1,.3,1),filter 1.1s ease;}
+.reveal.in-view{opacity:1;transform:none;filter:blur(0);}
+
+/* name-entry + wish reveal card */
+.entry-section{padding:50px 24px; display:flex; justify-content:center;}
+.entry-card{position:relative; width:100%; max-width:440px; background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.16); border-radius:22px; padding:38px 30px; text-align:center; backdrop-filter:blur(8px); box-shadow:0 20px 60px -20px rgba(106,76,255,.45);}
+.state{view-transition-name:entry-stage;}
+.entry-card h2{font-size:clamp(1.4rem,5vw,1.9rem); color:var(--pearl); margin-bottom:8px;}
+.entry-card .hint{color:var(--pearl-dim); font-size:.92rem; margin-bottom:22px;}
+#nameForm{display:flex; flex-direction:column; gap:12px;}
+#nameInput{padding:14px 16px; border-radius:14px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.2); color:var(--pearl); font-family:var(--font-body); font-size:1rem; text-align:center;}
+#nameForm button, #againBtn{font-family:var(--font-display); font-weight:700; color:var(--bg0); padding:13px 20px; border-radius:999px; background:linear-gradient(90deg,var(--gold),var(--pink)); font-size:1rem;}
+#againBtn{background:transparent; color:var(--pearl-dim); border:1px solid rgba(255,255,255,.25); font-family:var(--font-body); font-weight:600; margin-top:22px; font-size:.9rem; padding:9px 20px;}
+.wish-glow{position:absolute; left:50%; top:4px; width:180px; height:180px; transform:translateX(-50%); border-radius:50%; background:radial-gradient(circle, rgba(246,205,124,.28), transparent 70%); pointer-events:none;}
+#stateWish h2{position:relative; font-size:clamp(1.6rem,6vw,2.2rem); color:var(--gold-soft); text-shadow:0 0 30px rgba(246,205,124,.5); margin-bottom:14px; word-break:break-word;}
+.wish-text{position:relative; color:var(--pearl); font-size:1.02rem; line-height:1.8;}
+input:focus-visible, button:focus-visible, .flower:focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+
+/* guestbook */
+.guestbook{padding:10px 24px 90px; text-align:center;}
+.guestbook h3{font-size:clamp(1.2rem,4vw,1.5rem); margin-bottom:6px;}
+.guestbook .hint{color:var(--pearl-dim); font-size:.9rem; margin-bottom:20px;}
+.guest-list{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; max-width:560px; margin:0 auto;}
+.guest-chip{background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.18); border-radius:999px; padding:8px 16px; font-size:.88rem; color:var(--pink-soft);}
+
+footer{text-align:center; padding:30px 20px calc(50px + env(safe-area-inset-bottom,0px)); color:var(--pearl-dim); font-size:.85rem;}
+
+#controls{position:fixed; right:calc(16px + env(safe-area-inset-right,0px)); bottom:calc(16px + env(safe-area-inset-bottom,0px)); z-index:40; display:flex; flex-direction:column; gap:10px;}
+.ctrl-btn{width:46px; height:46px; border-radius:50%; background:rgba(20,14,42,.75); border:1px solid rgba(255,255,255,.2); backdrop-filter:blur(6px); font-size:1.2rem; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 18px -6px rgba(0,0,0,.6);}
+#topBtn{opacity:0; pointer-events:none; transform:translateY(8px); transition:opacity .3s ease, transform .3s ease;}
+#topBtn.show{opacity:1; pointer-events:auto; transform:none;}
+
+@media (max-width:640px){ .entry-card{padding:30px 22px;} }
+
+/* ================= PYTHON-SAVED WISH WALL ================= */
+.wish-wall-section{position:relative; z-index:1; max-width:780px; margin:0 auto; padding:12px 24px 90px;}
+.wall-title{text-align:center; margin-bottom:28px;}
+.wall-title h2{font-size:clamp(1.45rem,5vw,2rem); margin:8px 0 10px; color:var(--pearl);}
+.wall-title h2 em{color:var(--gold-soft);}
+.wall-title p:last-child{color:var(--pearl-dim); font-size:.95rem;}
+.message-form{display:flex; flex-direction:column; gap:10px; max-width:560px; margin:0 auto 28px; padding:24px; background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.16); border-radius:22px; text-align:left; backdrop-filter:blur(8px); box-shadow:0 20px 60px -25px rgba(106,76,255,.4);}
+.message-form label{font-size:.9rem; color:var(--pearl-dim); margin-top:4px;}
+.message-form input,.message-form textarea{width:100%; padding:13px 15px; border-radius:13px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.2); color:var(--pearl); font:inherit; resize:vertical;}
+.message-form input::placeholder,.message-form textarea::placeholder{color:rgba(255,248,242,.42);}
+.message-form-bottom{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:4px;}
+.message-form-bottom span{font-size:.82rem; color:var(--pearl-dim);}
+.message-form button{font-weight:700; color:var(--bg0); padding:12px 20px; border-radius:999px; background:linear-gradient(90deg,var(--gold),var(--pink));}
+.message-form button:disabled{cursor:wait;}
+.message-status{font-size:.83rem; color:var(--pearl-dim); min-height:0; margin-top:0;}
+.message-list{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); gap:14px;}
+.message-note{position:relative; padding:20px 20px 18px; border-radius:18px; background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(183,156,255,.055)); border:1px solid rgba(255,255,255,.14); box-shadow:0 12px 35px -22px rgba(0,0,0,.7); overflow:hidden; animation:noteIn .55s ease both;}
+.message-note::before{content:"✧"; position:absolute; top:9px; right:14px; color:var(--gold); font-size:1.2rem; text-shadow:0 0 18px var(--gold);}
+.message-note p{font-size:.96rem; line-height:1.7; overflow-wrap:anywhere;}
+.message-note small{display:block; margin-top:12px; color:var(--pink-soft); font-size:.82rem;}
+.empty-note{text-align:center; color:var(--pearl-dim); padding:20px; grid-column:1/-1;}
+@keyframes noteIn{from{opacity:0; transform:translateY(12px) scale(.98)}to{opacity:1; transform:none}}
+@media(max-width:640px){.message-form{padding:20px 17px}.wish-wall-section{padding-left:18px;padding-right:18px}.message-form-bottom button{width:100%}}
+
+
+@media(max-width:480px){
+ .gate-inner{padding:calc(12px + env(safe-area-inset-top,0px)) 18px calc(12px + env(safe-area-inset-bottom,0px))}
+ .portal-scene{width:min(72vw,285px);margin-bottom:0}
+ .gate-title-main{font-size:clamp(1.8rem,9vw,3rem);letter-spacing:-.045em}
+ .gate-title-top{letter-spacing:.2em}
+ #enterBtn{max-width:100%;padding:15px 19px;font-size:.92rem;white-space:normal}
+ .gate-note{max-width:31ch}
+}
+/* FIX: make the welcome gate scrollable on short mobile screens.
+   Previously overflow:hidden + vertical centering could place the button
+   below the viewport where touch scrolling was impossible. */
+#gate{
+  align-items:flex-start;
+  justify-content:center;
+  overflow-x:hidden !important;
+  overflow-y:auto !important;
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior-y:contain;
+  touch-action:pan-y;
+}
+.gate-inner{
+  flex-shrink:0;
+  margin-block:auto;
+  max-height:none;
+}
+@media(max-height:700px){
+  .gate-inner{padding-top:12px;padding-bottom:calc(18px + env(safe-area-inset-bottom,0px));}
+  .portal-scene{width:min(58vw,218px);margin-bottom:2px;}
+  .gate-eyebrow{margin-bottom:8px;}
+  .gate-title{margin-bottom:11px;}
+  .gate-note{margin-bottom:13px;font-size:.88rem;line-height:1.55;}
+  #enterBtn{padding:12px 18px;}
+  .gate-footnote{margin-top:10px;}
+}
+@media(max-height:560px){
+  .portal-scene{width:min(46vw,165px);margin-bottom:0;}
+  .ring{width:min(38vw,138px);height:min(38vw,138px);}
+  .gate-title-main{font-size:clamp(1.65rem,7vw,2.5rem);}
+  .gate-note{font-size:.82rem;margin-bottom:10px;}
+}
+/* Motion is full by default; the floating 🫧 control can enable reduced motion manually. */
+
+</style>
+</head>
+<body>
+
+<canvas id="bgCanvas" aria-hidden="true"></canvas>
+<div id="magicRain" aria-hidden="true"></div>
+<audio id="bgMusic" src="/static/20_10_magic_theme.mp3" preload="auto" loop></audio>
+<div id="musicStatusToast" role="status" aria-live="polite"></div>
+
+<div id="gate" aria-label="Màn chào mừng ngày Phụ nữ Việt Nam">
+  <div class="gate-inner">
+    <div class="portal-scene" aria-hidden="true">
+      <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div><div class="orbit orbit-d"></div><div class="orbit orbit-e"></div>
+      <div class="portal-star one"></div><div class="portal-star two"></div><div class="portal-star three"></div><div class="portal-star four"></div><div class="portal-star five"></div>
+      <div class="ring"></div>
+    </div>
+    <p class="gate-eyebrow">NGÀY CỦA NHỮNG ĐIỀU DỊU DÀNG</p>
+    <h1 class="gate-title"><span class="gate-title-top">CHÚC MỪNG</span><span class="gate-title-main">NGÀY 20 THÁNG 10</span></h1>
+    <p class="gate-note">Gửi đến những bông hoa tuyệt vời nhất — chúc bạn luôn rạng rỡ, hạnh phúc và được yêu thương theo cách đẹp nhất. 🌷</p>
+    <button id="enterBtn">✦ CHẠM ĐỂ MỞ CỔNG ÁNH SÁNG ✦</button>
+    <div class="gate-visitor-board" aria-live="polite">
+      <p class="gate-visitor-heading">✧ NHỮNG NGƯỜI ĐÃ GHÉ QUA ✧</p>
+      <p class="gate-visitor-count" id="gateGuestCount">Đang tìm những dấu chân lấp lánh…</p>
+      <div class="gate-guest-list" id="gateGuestList"></div>
+    </div>
+    <p class="gate-footnote">Một khu vườn nhỏ đang chờ bạn khám phá</p>
+  </div>
+</div>
+<div id="portalWave" aria-hidden="true"></div>
+
+<main id="main" hidden>
+
+  <section class="hero">
+    <div class="flowers" id="flowerField"></div>
+    <div class="clock-pill" id="clock">🕐 --:--:--</div>
+    <h1>CHÚC MỪNG NGÀY PHỤ NỮ VIỆT NAM</h1>
+    <div class="sub">20 Tháng 10</div>
+    <p class="tag">Nhập tên của bạn để nhận một lời chúc riêng, rồi gửi lại một lời chúc dễ thương cho mọi người trong khu vườn này nhé ✨</p>
+  </section>
+
+  <section class="entry-section reveal">
+    <div class="entry-card" id="entryCard">
+      <div class="state" id="stateForm">
+        <h2>Nhập tên của bạn</h2>
+        <p class="hint">để nhận một lời chúc 20/10 dễ thương nhé 🌷</p>
+        <form id="nameForm">
+          <input id="nameInput" type="text" maxlength="40" placeholder="Nhập tên của bạn..." autocomplete="off" required>
+          <button type="submit">✦ Xem lời chúc ✦</button>
+        </form>
+      </div>
+      <div class="state" id="stateWish" hidden>
+        <div class="wish-glow"></div>
+        <h2 id="wishName">—</h2>
+        <!-- ✏️ CHỈNH Ở ĐÂY: câu chúc mặc định nằm trong hàm DEFAULT_WISH() ở phần <script> bên dưới -->
+        <p class="wish-text" id="wishText"></p>
+        <button id="againBtn" type="button">↻ Nhập tên khác</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="guestbook reveal">
+    <h3>💌 Những người đã ghé thăm</h3>
+    <p class="hint" id="guestCount" aria-live="polite">Đang tải...</p>
+    <div id="guestList" class="guest-list"></div>
+  </section>
+
+  
+  <section class="wish-wall-section reveal" id="wishWallSection">
+    <div class="wall-title">
+      <p class="gate-eyebrow">A LITTLE NOTE FOR YOU</p>
+      <h2>Gửi một lời chúc <em>vào khu vườn</em></h2>
+      <p>Mỗi lời nhắn tử tế sẽ được lưu lại để mọi người cùng đọc 🌷</p>
+    </div>
+    <form id="messageForm" class="message-form">
+      <label for="messageName">Tên hiển thị</label>
+      <input id="messageName" type="text" maxlength="30" minlength="2" placeholder="Tên của bạn" required autocomplete="nickname">
+      <label for="messageText">Lời chúc bạn muốn gửi</label>
+      <textarea id="messageText" rows="3" maxlength="280" minlength="3" placeholder="Chúc mọi người có một ngày 20/10 thật vui..." required></textarea>
+      <div class="message-form-bottom"><span id="messageChars">0 / 280</span><button type="submit">✦ Gửi lời chúc ✦</button></div>
+      <p class="message-status" id="messageStatus" role="status" aria-live="polite"></p>
+    </form>
+    <div id="messageList" class="message-list" aria-live="polite"></div>
+  </section>
+  <footer>Thực hiện bằng cả tấm lòng, nhân ngày Phụ nữ Việt Nam 20/10 🌸</footer>
+</main>
+
+<div id="controls">
+  <button class="ctrl-btn" id="musicBtn" aria-pressed="false" aria-label="Bật/tắt nhạc nền" title="Nhạc nền">🔈</button>
+  <button class="ctrl-btn" id="particleBtn" aria-pressed="true" aria-label="Bật/tắt hạt sáng" title="Hạt sáng">✨</button>
+  <button class="ctrl-btn" id="motionBtn" aria-pressed="false" aria-label="Giảm hiệu ứng chuyển động" title="Giảm chuyển động">🪄</button>
+  <button class="ctrl-btn" id="topBtn" aria-label="Lên đầu trang" title="Lên đầu trang">⬆</button>
+</div>
+
+<script>
+(function(){
+"use strict";
+// Full cinematic motion is enabled by default as requested. Visitors can reduce it manually with the motion button.
+var reduced = false;
+
+/* ---------------- Canvas particles (sao / cánh hoa / đom đóm) ---------------- */
+var canvas = document.getElementById('bgCanvas');
+var ctx = canvas.getContext('2d');
+var W, H;
+function resize(){ W = canvas.width = innerWidth; H = canvas.height = innerHeight; }
+resize(); addEventListener('resize', resize);
+function rand(a,b){ return a + Math.random()*(b-a); }
+var isSmall = innerWidth < 700;
+var baseCount = reduced ? 30 : (isSmall ? 145 : 300);
+var particlesOn = true;
+
+function Particle(){ this.reset(true); }
+Particle.prototype.reset = function(init){
+  var r = Math.random();
+  this.type = r < 0.40 ? 'star' : (r < 0.76 ? 'petal' : (r < 0.91 ? 'firefly' : 'sparkle'));
+  this.x = rand(0, W);
+  this.y = init ? rand(0, H) : -20;
+  this.size = this.type === 'petal' ? rand(4,10) : (this.type === 'firefly' ? rand(1.5,3.2) : (this.type === 'sparkle' ? rand(2,4.2) : rand(0.8,2.5)));
+  this.speed = this.type === 'petal' ? rand(18,46) : (this.type === 'firefly' ? rand(6,15) : (this.type === 'sparkle' ? rand(4,12) : rand(2,8)));
+  this.drift = rand(-16,16);
+  this.rot = rand(0,360); this.rotSpeed = rand(-30,30);
+  this.tw = rand(0, Math.PI*2);
+  this.alpha = rand(.45,1);
+};
+Particle.prototype.update = function(dt){
+  this.y += this.speed*dt;
+  this.x += (this.drift + Math.sin(this.tw)*8) * dt * 0.3;
+  this.rot += this.rotSpeed*dt;
+  this.tw += dt*1.4;
+  if(this.y > H+20 || this.x < -30 || this.x > W+30) this.reset(false);
+};
+Particle.prototype.draw = function(){
+  ctx.save(); ctx.translate(this.x, this.y); ctx.rotate(this.rot*Math.PI/180);
+  if(this.type === 'petal'){
+    ctx.globalAlpha = this.alpha; ctx.fillStyle = 'rgba(255,179,217,.85)';
+    ctx.beginPath(); ctx.ellipse(0,0,this.size,this.size*0.55,0,0,Math.PI*2); ctx.fill();
+  } else if(this.type === 'firefly'){
+    ctx.globalAlpha = (0.5+0.5*Math.sin(this.tw)) * this.alpha;
+    var g = ctx.createRadialGradient(0,0,0,0,0,this.size*5);
+    g.addColorStop(0,'rgba(246,205,124,.9)'); g.addColorStop(1,'rgba(246,205,124,0)');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(0,0,this.size*5,0,Math.PI*2); ctx.fill();
+  } else if(this.type === 'sparkle'){
+    ctx.globalAlpha = (0.35+0.65*Math.sin(this.tw)) * this.alpha;
+    ctx.strokeStyle = 'rgba(255,217,236,.95)'; ctx.lineWidth = 1;
+    ctx.shadowBlur = 12; ctx.shadowColor = '#ffb3d9';
+    ctx.beginPath(); ctx.moveTo(-this.size*1.8,0); ctx.lineTo(this.size*1.8,0); ctx.moveTo(0,-this.size*1.8); ctx.lineTo(0,this.size*1.8); ctx.stroke();
+  } else {
+    ctx.globalAlpha = (0.5+0.5*Math.sin(this.tw)) * this.alpha; ctx.fillStyle = '#fff8f2';
+    ctx.shadowBlur = 5; ctx.shadowColor = '#fff8f2';
+    ctx.beginPath(); ctx.arc(0,0,this.size,0,Math.PI*2); ctx.fill();
+  }
+  ctx.restore();
+};
+var particles = []; for(var i=0;i<baseCount;i++) particles.push(new Particle());
+
+var bursts = [];
+function burstAt(x,y,n){
+  for(var i=0;i<n;i++){
+    var a = Math.random()*Math.PI*2, sp = rand(55,270);
+    bursts.push({x:x,y:y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,life:rand(1.3,2.1),size:rand(1.7,5.8),sparkle:Math.random()>.38,hue:Math.random()});
+  }
+}
+var last = performance.now();
+function loop(now){
+  var dt = Math.min((now-last)/1000, 0.05); last = now;
+  ctx.clearRect(0,0,W,H);
+  if(particlesOn){ for(var i=0;i<particles.length;i++){ if(!reduced) particles[i].update(dt); particles[i].draw(); } }
+  for(var j=bursts.length-1;j>=0;j--){
+    var b = bursts[j];
+    b.x += b.vx*dt; b.y += b.vy*dt; b.life -= dt*.72; b.vx *= 0.982; b.vy *= 0.982;
+    if(b.life <= 0){ bursts.splice(j,1); continue; }
+    ctx.globalAlpha = Math.min(Math.max(b.life/1.4,0),1);
+    ctx.fillStyle = b.hue < .33 ? 'rgba(255,224,176,.98)' : (b.hue < .66 ? 'rgba(255,179,217,.95)' : 'rgba(212,192,255,.97)');
+    ctx.shadowBlur = b.sparkle ? 16 : 7; ctx.shadowColor = ctx.fillStyle;
+    if(b.sparkle){ ctx.save(); ctx.translate(b.x,b.y); ctx.rotate((1.4-b.life)*2); ctx.fillRect(-b.size*.35,-b.size*1.7,b.size*.7,b.size*3.4); ctx.fillRect(-b.size*1.7,-b.size*.35,b.size*3.4,b.size*.7); ctx.restore(); }
+    else { ctx.beginPath(); ctx.arc(b.x,b.y,b.size,0,Math.PI*2); ctx.fill(); }
+  }
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+if(!reduced){
+  addEventListener('mousemove', function(e){
+    var mx = (e.clientX/innerWidth-0.5), my = (e.clientY/innerHeight-0.5);
+    canvas.style.transform = 'translate('+(mx*-10)+'px,'+(my*-10)+'px)';
+  }, {passive:true});
+}
+
+/* ---------------- Foreground falling petals for the portal ceremony ---------------- */
+var magicRain = document.getElementById('magicRain');
+var magicRainTimers = [];
+function rainMagicPetals(count){
+  clearMagicPetals();
+  var symbols = ['✧','✦','❀','✿','🌸','❋','♡','✧'];
+  var tints = ['#ffe6b0','#ffb3d9','#d4c0ff','#fff8f2'];
+  for(var i=0;i<count;i++){
+    var el=document.createElement('span');
+    el.className='magic-petal';
+    el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    el.style.setProperty('--x', (Math.random()*100).toFixed(2)+'%');
+    el.style.setProperty('--size', (rand(12,30)).toFixed(1)+'px');
+    el.style.setProperty('--dur', (rand(3.0,6.2)).toFixed(2)+'s');
+    el.style.setProperty('--delay', (rand(0,1.9)).toFixed(2)+'s');
+    var drift = rand(-105,105);
+    el.style.setProperty('--drift', drift.toFixed(0)+'px');
+    el.style.setProperty('--drift-end', (-drift).toFixed(0)+'px');
+    el.style.setProperty('--tint', tints[Math.floor(Math.random()*tints.length)]);
+    magicRain.appendChild(el);
+  }
+}
+function clearMagicPetals(){ magicRain.replaceChildren(); }
+
+/* ---------------- Gate ---------------- */
+var gate = document.getElementById('gate'), main = document.getElementById('main');
+var portalWave = document.getElementById('portalWave');
+var enteringWorld = false;
+function showMainWorld(){
+  var swap = function(){
+    gate.style.display = 'none';
+    main.hidden = false;
+    main.classList.add('show','ceremony-entered');
+  };
+  if(document.startViewTransition && !reduced){
+    try{
+      document.documentElement.classList.add('portal-view-transition');
+      var vt = document.startViewTransition(swap);
+      vt.finished.catch(function(){}).finally(function(){
+        document.documentElement.classList.remove('portal-view-transition');
+        // Let the portal glow finish its own full sweep instead of cutting it short.
+        setTimeout(function(){ portalWave.classList.remove('run'); }, 180);
+        setTimeout(function(){ main.classList.remove('ceremony-entered'); }, 3300);
+      });
+      return;
+    }catch(error){ document.documentElement.classList.remove('portal-view-transition'); /* Long CSS fallback below. */ }
+  }
+  swap();
+  setTimeout(function(){ portalWave.classList.remove('run'); main.classList.remove('ceremony-entered'); }, reduced ? 50 : 3400);
+}
+document.getElementById('enterBtn').addEventListener('click', function(){
+  if(enteringWorld) return;
+  enteringWorld = true;
+  this.disabled = true;
+  this.textContent = '✧ CỔNG ÁNH SÁNG ĐANG THỨC TỈNH… ✧';
+  // This first tap is a real user gesture, so mobile browsers are allowed to start audio here.
+  startMusic();
+  canvas.classList.add('burst-on-top');
+  gate.classList.add('charging');
+  var ring = document.querySelector('.portal-scene');
+  var rr = ring.getBoundingClientRect();
+  burstAt(rr.left+rr.width/2, rr.top+rr.height/2, 220);
+  if(reduced){
+    setTimeout(showMainWorld, 150);
+    setTimeout(function(){canvas.classList.remove('burst-on-top');}, 700);
+    return;
+  }
+  // Phase 1: the portal gathers light slowly. Phase 2: side stars orbit inward.
+  setTimeout(function(){ burstAt(innerWidth*.23, innerHeight*.34, 95); burstAt(innerWidth*.77, innerHeight*.40, 95); }, 820);
+  setTimeout(function(){ burstAt(innerWidth*.5, innerHeight*.43, 180); burstAt(innerWidth*.34, innerHeight*.55, 62); burstAt(innerWidth*.66, innerHeight*.50, 62); }, 1740);
+  // Phase 3 starts only after the charging animation has been seen for several seconds.
+  setTimeout(function(){
+    gate.classList.add('opening');
+    portalWave.classList.remove('run'); void portalWave.offsetWidth; portalWave.classList.add('run');
+    rainMagicPetals(92);
+    burstAt(innerWidth/2, innerHeight*.44, 360);
+    setTimeout(function(){ burstAt(innerWidth*.15, innerHeight*.60, 100); burstAt(innerWidth*.85, innerHeight*.35, 100); }, 950);
+    setTimeout(function(){ burstAt(innerWidth*.5, innerHeight*.47, 260); burstAt(innerWidth*.28, innerHeight*.28, 75); burstAt(innerWidth*.72, innerHeight*.30, 75); }, 2200);
+    // About 7.8 seconds after the tap, the garden finally opens; Morph continues during entry.
+    setTimeout(showMainWorld, 4700);
+    setTimeout(function(){
+      canvas.classList.remove('burst-on-top');
+      clearMagicPetals();
+    }, 11100);
+  }, 3100);
+
+});
+
+/* ---------------- Scroll reveal ---------------- */
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('in-view'); });
+}, {threshold:0.2});
+document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+/* ---------------- Flower field ---------------- */
+var flowerEmojis = ['🌸','🌺','🌷','✿'];
+var field = document.getElementById('flowerField');
+var spots = [[8,20],[88,16],[14,70],[80,66],[50,10],[46,82],[28,35],[73,47],[35,60],[63,75],[6,49],[94,58]];
+spots.forEach(function(pos, idx){
+  var f = document.createElement('button');
+  f.className = 'flower'; f.type = 'button'; f.setAttribute('aria-label','Chạm vào hoa');
+  f.style.left = pos[0]+'%'; f.style.top = pos[1]+'%';
+  f.textContent = flowerEmojis[idx % flowerEmojis.length];
+  f.addEventListener('click', function(){
+    f.classList.remove('bloom'); void f.offsetWidth; f.classList.add('bloom');
+    var r = f.getBoundingClientRect();
+    burstAt(r.left+r.width/2, r.top+r.height/2, reduced ? 6 : 18);
+  });
+  field.appendChild(f);
+});
+
+/* ---------------- Name entry -> morph -> default wish ---------------- */
+/* ✏️ CHỈNH Ở ĐÂY: nội dung lời chúc mặc định */
+function DEFAULT_WISH(name){
+  return 'Chúc ' + name + ' luôn vui vẻ, tự tin, rạng rỡ và có thật nhiều điều tốt đẹp trong cuộc sống. Mong bạn luôn được trân trọng, gặp nhiều may mắn và giữ mãi nụ cười của mình. Chúc bạn một ngày Phụ nữ Việt Nam 20/10 ngập tràn niềm vui, yêu thương và những khoảnh khắc đáng nhớ! 🌸✨';
+}
+var stateForm = document.getElementById('stateForm'), stateWish = document.getElementById('stateWish');
+var entryCard = document.getElementById('entryCard');
+
+function showWish(name){
+  document.getElementById('wishName').textContent = name;
+  document.getElementById('wishText').textContent = DEFAULT_WISH(name);
+  stateForm.hidden = true; stateWish.hidden = false;
+}
+function showForm(){
+  stateWish.hidden = true; stateForm.hidden = false;
+  var inp = document.getElementById('nameInput'); inp.value=''; inp.focus();
+}
+function morph(fn){
+  if(document.startViewTransition && !reduced){ document.startViewTransition(fn); return; }
+  if(reduced){ fn(); return; }
+  entryCard.style.transition = 'opacity 1.2s cubic-bezier(.16,1,.3,1), transform 1.5s cubic-bezier(.16,1,.3,1), filter 1.15s ease';
+  entryCard.style.filter = 'blur(8px)';
+  entryCard.style.opacity = '0'; entryCard.style.transform = 'translateY(24px) scale(.88) rotateX(12deg)';
+  setTimeout(function(){
+    fn();
+    requestAnimationFrame(function(){ entryCard.style.opacity = '1'; entryCard.style.transform = 'none'; entryCard.style.filter = 'blur(0)'; });
+  }, 950);
+}
+document.getElementById('nameForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var name = document.getElementById('nameInput').value.trim();
+  if(!name) return;
+  morph(function(){ showWish(name); });
+  var r = entryCard.getBoundingClientRect();
+  burstAt(r.left+r.width/2, r.top+30, reduced ? 8 : 26);
+  saveGuest(name);
+});
+document.getElementById('againBtn').addEventListener('click', function(){ morph(showForm); });
+
+/* ---------------- Python + SQLite guestbook API ---------------- */
+function renderGuests(items){
+  var list = document.getElementById('guestList');
+  var countEl = document.getElementById('guestCount');
+  var gateList = document.getElementById('gateGuestList');
+  var gateCount = document.getElementById('gateGuestCount');
+  list.replaceChildren(); gateList.replaceChildren();
+  if(!items.length){
+    countEl.textContent = 'Hãy là người đầu tiên ghé thăm!';
+    gateCount.textContent = 'Bạn có thể là người đầu tiên để lại dấu ấn 🌷';
+    return;
+  }
+  countEl.textContent = items.length + ' người đã ghé thăm';
+  gateCount.textContent = items.length + ' người đã ghé qua khu vườn này';
+  items.forEach(function(item){
+    var chip = document.createElement('span');
+    chip.className = 'guest-chip'; chip.textContent = item.name || 'Ẩn danh'; list.appendChild(chip);
+    var gateChip = document.createElement('span');
+    gateChip.className = 'gate-guest-chip'; gateChip.textContent = '✦ ' + (item.name || 'Ẩn danh'); gateList.appendChild(gateChip);
+  });
+}
+async function loadGuests(){
+  try{
+    var response = await fetch('/api/guests', {cache:'no-store'});
+    if(!response.ok) throw new Error('Không tải được danh sách');
+    var data = await response.json(); renderGuests(data.guests || []);
+  }catch(error){ document.getElementById('guestCount').textContent = 'Không kết nối được máy chủ Python'; }
+}
+async function saveGuest(name){
+  try{
+    await fetch('/api/guests', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({name:name})});
+    await loadGuests();
+  }catch(error){ /* lời chúc cá nhân vẫn hiển thị dù mạng lỗi */ }
+}
+function renderMessages(messages){
+  var list = document.getElementById('messageList'); list.replaceChildren();
+  if(!messages.length){
+    var empty = document.createElement('p'); empty.className='empty-note';
+    empty.textContent='Khu vườn đang chờ lời chúc đầu tiên của bạn ✨'; list.appendChild(empty); return;
+  }
+  messages.forEach(function(item){
+    var card = document.createElement('article'); card.className='message-note';
+    var message = document.createElement('p'); message.textContent=item.message;
+    var by = document.createElement('small'); by.textContent='— ' + item.name;
+    card.append(message, by); list.appendChild(card);
+  });
+}
+async function loadMessages(){
+  try{
+    var response = await fetch('/api/wishes', {cache:'no-store'});
+    if(!response.ok) throw new Error('Không tải được lời chúc');
+    var data = await response.json(); renderMessages(data.wishes || []);
+    document.getElementById('messageStatus').textContent='';
+  }catch(error){ document.getElementById('messageStatus').textContent='Chưa kết nối được máy chủ. Hãy chạy app.py để sử dụng.'; }
+}
+loadGuests(); loadMessages();
+// Cập nhật danh sách người đã để lại tên ở màn mở đầu và trong trang chính.
+setInterval(loadGuests, 15000);
+document.getElementById('messageText').addEventListener('input', function(){
+  document.getElementById('messageChars').textContent=this.value.length+' / 280';
+});
+document.getElementById('messageForm').addEventListener('submit', async function(event){
+  event.preventDefault();
+  var name=document.getElementById('messageName').value.trim();
+  var message=document.getElementById('messageText').value.trim();
+  var status=document.getElementById('messageStatus');
+  var button=this.querySelector('button[type="submit"]');
+  if(name.length<2 || message.length<3){status.textContent='Tên cần ít nhất 2 ký tự và lời chúc ít nhất 3 ký tự nhé.';return;}
+  button.disabled=true; button.style.opacity='.65'; status.textContent='Đang gửi lời chúc…';
+  try{
+    var response=await fetch('/api/wishes',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name,message:message})});
+    var result=await response.json();
+    if(!response.ok) throw new Error(result.error || 'Không gửi được lời chúc');
+    document.getElementById('messageForm').reset(); document.getElementById('messageChars').textContent='0 / 280';
+    status.textContent='Đã gửi lời chúc thành công. Cảm ơn bạn đã mang một chút dịu dàng đến khu vườn! ✨';
+    await loadMessages();
+    var rect=this.getBoundingClientRect(); burstAt(rect.left+rect.width/2,rect.top+20,reduced?8:30);
+  }catch(error){status.textContent=error.message || 'Có lỗi xảy ra, bạn thử lại nhé.';}
+  finally{button.disabled=false;button.style.opacity='1';}
+});
+
+/* ---------------- Clock (giờ Việt Nam) ---------------- */
+function tickClock(){
+  var now = new Date();
+  var t = new Intl.DateTimeFormat('vi-VN',{timeZone:'Asia/Ho_Chi_Minh',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(now);
+  var d = new Intl.DateTimeFormat('vi-VN',{timeZone:'Asia/Ho_Chi_Minh',day:'2-digit',month:'2-digit',year:'numeric'}).format(now);
+  var md = new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Ho_Chi_Minh',month:'2-digit',day:'2-digit'}).format(now);
+  document.getElementById('clock').textContent = '🕐 ' + t + ' — ' + d + (md === '10/20' ? '  🎉 Hôm nay là 20/10!' : '');
+}
+tickClock(); setInterval(tickClock, 1000);
+
+/* ---------------- Controls and actual background music ---------------- */
+var bgMusic = document.getElementById('bgMusic');
+var musicBtn = document.getElementById('musicBtn');
+var musicOn = false;
+var musicToastTimer = null;
+function showMusicToast(message){
+  var toast=document.getElementById('musicStatusToast');
+  toast.textContent=message; toast.classList.add('show');
+  if(musicToastTimer) clearTimeout(musicToastTimer);
+  musicToastTimer=setTimeout(function(){toast.classList.remove('show');}, 3000);
+}
+function updateMusicButton(isPlaying){
+  musicOn=isPlaying;
+  musicBtn.setAttribute('aria-pressed', String(isPlaying));
+  musicBtn.textContent=isPlaying ? '♫' : '🔈';
+  musicBtn.title=isPlaying ? 'Tắt nhạc nền' : 'Bật nhạc nền';
+  musicBtn.setAttribute('aria-label', isPlaying ? 'Tắt nhạc nền' : 'Bật nhạc nền');
+}
+function startMusic(){
+  if(!bgMusic) return;
+  bgMusic.volume = 0.46;
+  var p;
+  try { p=bgMusic.play(); }
+  catch(error){ updateMusicButton(false); showMusicToast('Chưa phát được nhạc. Chạm nút loa sau khi trang mở nhé.'); return; }
+  if(p && typeof p.then === 'function'){
+    p.then(function(){ updateMusicButton(true); showMusicToast('♫ Nhạc nền khu vườn đang phát'); })
+     .catch(function(){ updateMusicButton(false); showMusicToast('Trình duyệt chặn nhạc tự phát — chạm nút loa để thử lại.'); });
+  }else{ updateMusicButton(true); showMusicToast('♫ Nhạc nền khu vườn đang phát'); }
+}
+function stopMusic(){ if(bgMusic) bgMusic.pause(); updateMusicButton(false); showMusicToast('Đã tắt nhạc nền'); }
+musicBtn.addEventListener('click', function(){ if(musicOn) stopMusic(); else startMusic(); });
+document.getElementById('particleBtn').addEventListener('click', function(){
+  particlesOn = !particlesOn; this.setAttribute('aria-pressed', particlesOn); this.textContent = particlesOn ? '✨' : '🌑';
+});
+var motionBtn = document.getElementById('motionBtn');
+motionBtn.addEventListener('click', function(){
+  reduced = !reduced;
+  document.documentElement.classList.toggle('reduce-motion', reduced);
+  this.setAttribute('aria-pressed', String(reduced));
+  this.textContent = reduced ? '🫧' : '🪄';
+  this.title = reduced ? 'Bật lại hiệu ứng chuyển động' : 'Giảm chuyển động';
+  this.setAttribute('aria-label', this.title);
+  showMusicToast(reduced ? 'Đã giảm chuyển động' : 'Đã bật đầy đủ hiệu ứng ✨');
+});
+var topBtn = document.getElementById('topBtn');
+addEventListener('scroll', function(){ topBtn.classList.toggle('show', scrollY > 420); }, {passive:true});
+topBtn.addEventListener('click', function(){ scrollTo({top:0, behavior: reduced ? 'auto' : 'smooth'}); });
+document.addEventListener('visibilitychange', function(){ if(document.hidden && bgMusic && !bgMusic.paused){ bgMusic.pause(); updateMusicButton(false); } });
+
+})();
+</script>
+</body>
+</html>
